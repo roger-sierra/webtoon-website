@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate a Webtoon</title>
+</head>
+<body>
+    <h1>Rate a Webtoon</h1>
+
+    <form method="POST" action="{{ url_for('rate_webtoon') }}">
+        <label for="webtoon_id">Select Webtoon:</label>
+        <select name="webtoon_id" id="webtoon_id" required>
+            {% for webtoon in webtoons %}
+                <option value="{{ webtoon[0] }}">{{ webtoon[1] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" name="rating" id="rating" min="1" max="5" required>
+        <br><br>
+
+        <button type="submit">Submit Rating</button>
+    </form>
+</body>
+</html>
