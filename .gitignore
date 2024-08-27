@@ -1,0 +1,15 @@
+# .gitignore
+
+# Ignore PyCharm project files
+.idea/
+
+# Ignore the environment file
+.env
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Ignore OS-specific files
+.DS_Store
+*.log
